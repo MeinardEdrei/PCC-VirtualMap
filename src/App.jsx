@@ -203,8 +203,8 @@ const LandingPage = ({ onStartTour }) => (
     <div className="absolute inset-0 z-0 bg-cover bg-center"
       style={{ backgroundImage: "url('/images/pcc-bg-fade.jpg')", filter: "brightness(0.6)" }} />
 
-    <main className="relative z-10 flex flex-1 items-center mt-30">
-      <div className="w-full bg-white/10 backdrop-blur-xl border-y border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3)] py-12 md:py-15 px-6 md:px-15 flex flex-col lg:flex-row items-center justify-between gap-12">
+    <main className="relative z-10 flex flex-1 items-center mt-20">
+      <div className="w-full bg-white/10 my-20 backdrop-blur-xl border-y border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3)] py-12 md:py-15 px-6 md:px-15 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="flex-1 text-white text-center lg:text-left">
           <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[60px] text-shadow-lg/30 font-black tracking-tight leading-none mb-6 md:mb-10">
             PCC'S VIRTUAL TOUR
@@ -235,7 +235,7 @@ const LandingPage = ({ onStartTour }) => (
         style={{ backgroundImage: "url('/images/pcc-arches.png')" }} />
     </div> */}
 
-    <div className="relative z-10 bg-gradient-to-b from-[#8b1515] via-[#8b1515] to-[#181818] py-10 md:py-20 px-6 md:px-12 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+    <div className="relative z-10 bg-gradient-to-b from-[#8b1515] via-[#8b1515] to-[#181818] py-0 md:py-0 px-6 md:px-12 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
       <Img src="/images/pcc-logo.png" alt="Big Logo" className="w-40 h-40 md:w-48 md:h-48 drop-shadow-xl" />
       <h2 className="text-white text-shadow-lg/30 text-5xl sm:text-7xl md:text-[95px] font-semibold tracking-tight leading-none">
         PASIG CATHOLIC COLLEGE
