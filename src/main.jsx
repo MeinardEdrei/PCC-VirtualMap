@@ -1,3 +1,5 @@
+import 'pannellum/build/pannellum.css';
+import 'pannellum';
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
