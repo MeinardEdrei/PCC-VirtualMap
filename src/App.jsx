@@ -906,7 +906,7 @@ const LandingPage = ({ onStartTour }) => (
         </div>
         <div className="relative w-full max-w-[660px]">
           <div className="aspect-video rounded-[30px] md:rounded-[50px] overflow-hidden border border-white/20 shadow-2xl relative">
-            <Img src="/images/preview.jpg" alt="Preview" className="w-full h-full object-cover" />
+            <Img src="/360_images/grounds/OUTSIDE_IMAGE2.jpg" alt="Preview" className="w-full h-full object-cover" />
             <button onClick={onStartTour}
               className="absolute bottom-6 left-6 md:bottom-10 md:left-10 flex items-center gap-4 bg-[#8b1515] hover:bg-[#a31a1a] transition-all text-white px-5 py-2 md:pl-8 md:pr-4 md:py-3 rounded-2xl md:rounded-[24px] shadow-2xl group">
               <span className="text-xl md:text-3xl font-bold tracking-tight">START</span>
