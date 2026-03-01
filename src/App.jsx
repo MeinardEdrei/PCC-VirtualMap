@@ -71,10 +71,528 @@ const SCENES = {
     label: "Middle of Grounds",
     panorama: "/360_images/grounds/IMG8.jpg",
     hotSpots: [
-      // TODO: add hotspots once next scene images are ready
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "MiddleofGrounds3", text: "Forward" },
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "SideofGrounds", text: "That" },
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "OtherSideofGrounds", text: "This" },
+      { pitch: -6.754, yaw: 179.650, type: "scene", sceneId: "MiddleofGrounds", text: "Back" },
     ],
   },
-};
+MiddleofGrounds3: {
+    id: "MiddleofGrounds3",
+    label: "Middle of Grounds",
+    panorama: "/360_images/grounds/IMG9.jpg",
+    hotSpots: [
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "MiddleofGrounds4", text: "Forward" },
+      { pitch: -6.754, yaw: 179.650, type: "scene", sceneId: "MiddleofGrounds2", text: "Back" },
+    ],
+  },
+  MiddleofGrounds4: {
+    id: "MiddleofGrounds4",
+    label: "Middle of Grounds",
+    panorama: "/360_images/grounds/IMG10.jpg",
+    hotSpots: [
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "MiddleofGrounds5", text: "Forward" },
+      { pitch: -6.754, yaw: 179.650, type: "scene", sceneId: "MiddleofGrounds3", text: "Back" },
+    ],
+  },
+  SideofGrounds: {
+    id: "SideofGrounds",
+    label: "Side of Grounds",
+    panorama: "/360_images/grounds/IMG11.jpg",
+    hotSpots: [
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "SideofGrounds2", text: "Forward" },
+      { pitch: -6.754, yaw: 179.650, type: "scene", sceneId: "MiddleofGrounds4", text: "Back" },
+    ],
+  },
+  SideofGrounds2: {
+    id: "SideofGrounds2",
+    label: "Side of Grounds",
+    panorama: "/360_images/grounds/IMG12.jpg",
+    hotSpots: [
+      { pitch: -6.754, yaw: 179.650, type: "scene", sceneId: "SideofGrounds", text: "Back" },
+    ],
+  },
+  OtherSideofGrounds: {
+    id: "OtherSideofGrounds",
+    label: "Other Side of Grounds",
+    panorama: "/360_images/grounds/IMG13.jpg",
+    hotSpots: [
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "MiddleofGrounds2", text: "Back" },
+    ],
+  },
+  OtherOtherSideofGrounds: {
+    id: "OtherOtherSideofGrounds",
+    label: "Other Other Side of Grounds",
+    panorama: "/360_images/grounds/IMG14.jpg",
+    hotSpots: [
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "MiddleofGrounds", text: "Back" },
+    ],
+  },
+  JHSHallway1: {
+    id: "JHSHallway1",
+    label: "JHS Hallway",
+    panorama: "/360_images/JHS BUILDING/JHSHallway1.jpg",
+    hotSpots: [
+      { pitch: -12.937, yaw: -4.072, type: "scene", sceneId: "Inside1", text: "Back" },
+      { pitch: -6.029, yaw: 172.077, type: "scene", sceneId: "JHSHallway2", text: "Forward" },
+    ],
+  },
+  JHSHallway2: {
+    id: "JHSHallway2",
+    label: "JHS Hallway",
+    panorama: "/360_images/JHS BUILDING/JHSHallway2.jpg",
+    hotSpots: [
+      { pitch: -12.937, yaw: -4.072, type: "scene", sceneId: "JHSHallway3", text: "Forward" },
+      { pitch: -6.029, yaw: 172.077, type: "scene", sceneId: "JHSHallway1", text: "Back" },
+      { pitch: -12.891, yaw: -94.283, type: "scene", sceneId: "OtherOtherSideofGrounds", text: "Forward" },
+    ],
+  },
+  JHSHallway3: {
+    id: "JHSHallway3",
+    label: "JHS Hallway",
+    panorama: "/360_images/JHS BUILDING/JHSHallway3.jpg",
+    hotSpots: [
+      { pitch: -10.974, yaw: -68.421, type: "scene", sceneId: "JHSHallway4", text: "Forward" },
+      { pitch: -8.242, yaw: 109.059, type: "scene", sceneId: "JHSHallway2", text: "Back" },
+    ],
+  },
+  JHSHallway4: {
+    id: "JHSHallway4",
+    label: "JHS Hallway",
+    panorama: "/360_images/JHS BUILDING/JHSHallway4.jpg",
+    hotSpots: [
+      { pitch: -8.607, yaw: -58.601, type: "scene", sceneId: "JHSHallway5", text: "Forward" },
+      { pitch: -9.836, yaw: 120.497, type: "scene", sceneId: "JHSHallway3", text: "Back" },
+    ],
+  },
+  JHSHallway5: {
+    id: "JHSHallway5",
+    label: "JHS Hallway",
+    panorama: "/360_images/JHS BUILDING/JHSHallway5.jpg",
+    hotSpots: [
+      { pitch: -11.371, yaw: 11.421, type: "scene", sceneId: "JHSHallway6", text: "Forward" },
+      { pitch: -5.296, yaw: -155.691, type: "scene", sceneId: "JHSHallway4", text: "Back" },
+    ],
+  },
+  JHSHallway6: {
+    id: "JHSHallway6",
+    label: "JHS Hallway",
+    panorama: "/360_images/JHS BUILDING/JHSHallway6.jpg",
+    hotSpots: [
+      { pitch: -19.553, yaw: 122.337, type: "scene", sceneId: "Upstairs", text: "Forward" },
+      { pitch: -6.625, yaw: 2.182, type: "scene", sceneId: "JHSHallway5", text: "Back" },
+    ],
+  },
+  Upstairs: {
+    id: "Upstairs",
+    label: "JHS Upstairs",
+    panorama: "/360_images/JHS BUILDING/JHSUpstairs.jpg",
+    hotSpots: [
+      { pitch: -26.989, yaw: 22.529, type: "scene", sceneId: "JHSHallway6", text: "Back" },
+      { pitch: -5.235, yaw: -6.830, type: "scene", sceneId: "JHSUpstairs1", text: "Forward" },
+    ],
+  },
+  JHSUpstairs1: {
+    id: "JHSUpstairs1",
+    label: "JHS Upstairs",
+    panorama: "/360_images/JHS BUILDING/JHSUpstairs1.jpg",
+    hotSpots: [
+      { pitch: -3.159, yaw: 122.602, type: "scene", sceneId: "Upstairs", text: "Back" },
+      { pitch: -4.616, yaw: -62.144, type: "scene", sceneId: "JHSUpstairs2", text: "Forward" },
+    ],
+  },
+  JHSUpstairs2: {
+    id: "JHSUpstairs2",
+    label: "JHS Upstairs",
+    panorama: "/360_images/JHS BUILDING/JHSUpstairs2.jpg",
+    hotSpots: [
+      { pitch: -9.898, yaw: -117.952, type: "scene", sceneId: "JHSUpstairs1", text: "Back" },
+      { pitch: -4.394, yaw: 63.680, type: "scene", sceneId: "JHSUpstairs3", text: "Forward" },
+    ],
+  },
+  JHSUpstairs3: {
+    id: "JHSUpstairs3",
+    label: "JHS Upstairs",
+    panorama: "/360_images/JHS BUILDING/JHSUpstairs3.jpg",
+    hotSpots: [
+      { pitch: -4.608, yaw: -21.547, type: "scene", sceneId: "JHSUpstairs2", text: "Back" },
+      { pitch: -9.759, yaw: 156.836, type: "scene", sceneId: "JHSUpstairs4", text: "Forward" },
+    ],
+  },
+  JHSUpstairs4: {
+    id: "JHSUpstairs4",
+    label: "JHS Upstairs",
+    panorama: "/360_images/JHS BUILDING/JHSUpstairs4.jpg",
+    hotSpots: [
+      { pitch: -142.649, yaw: -58.600, type: "scene", sceneId: "JHSUpstairs3", text: "Back" },
+      { pitch: 4.259, yaw: 39.453, type: "scene", sceneId: "JHSUpstairs5", text: "Forward" },
+    ],
+  },
+  JHSUpstairs5: {
+    id: "JHSUpstairs5",
+    label: "JHS Upstairs",
+    panorama: "/360_images/JHS BUILDING/JHSUpstairs5.jpg",
+    hotSpots: [
+      { pitch: -22.634, yaw: -99.283, type: "scene", sceneId: "JHSUpstairs4", text: "Back" },
+      { pitch: -5.976, yaw: 3.075, type: "scene", sceneId: "JHSUpstairs6", text: "Forward" },
+    ],
+  },
+  JHSUpstairs6: {
+    id: "JHSUpstairs6",
+    label: "JHS Upstairs",
+    panorama: "/360_images/JHS BUILDING/JHSUpstairs6.jpg",
+    hotSpots: [
+      { pitch: -4.333, yaw: 145.376, type: "scene", sceneId: "JHSUpstairs5", text: "Back" },
+      { pitch: -3.816, yaw: -32.177, type: "scene", sceneId: "JHSUpstairs7", text: "Forward" },
+    ],
+  },
+  JHSUpstairs7: {
+    id: "JHSUpstairs7",
+    label: "JHS Upstairs",
+    panorama: "/360_images/JHS BUILDING/JHSUpstairs7.jpg",
+    hotSpots: [
+      { pitch: -3.528, yaw: 16.691, type: "scene", sceneId: "JHSUpstairs6", text: "Back" },
+      { pitch: -8.543, yaw: -152.219, type: "scene", sceneId: "JHSUpstairs8", text: "Forward" },
+    ],
+  },
+  GradeSchool1: {
+    id: "GradeSchool1",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE1.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool2", text: "Forward" },
+    ],
+  },
+  GradeSchool2: {
+    id: "GradeSchool2",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE2.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool3", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool1", text: "Back" },
+    ],
+  },
+  GradeSchool3: {
+    id: "GradeSchool3",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE3.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool4", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool2", text: "Back" },
+    ],
+  },
+  GradeSchool4: {
+    id: "GradeSchool4",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE4.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool5", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool3", text: "Back" },
+    ],
+  },
+  GradeSchool5: {
+    id: "GradeSchool5",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE5.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool6", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool4", text: "Back" },
+    ],
+  },
+  GradeSchool6: {
+    id: "GradeSchool6",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE6.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool7", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool5", text: "Back" },
+    ],
+  },
+  GradeSchool7: {
+    id: "GradeSchool7",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE7.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool8", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool6", text: "Back" },
+    ],
+  },
+  GradeSchool8: {
+    id: "GradeSchool8",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE8.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool9", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool7", text: "Back" },
+    ],
+  },
+  GradeSchool9: {
+    id: "GradeSchool9",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE9.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool10", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool8", text: "Back" },
+    ],
+  },
+  GradeSchool10: {
+    id: "GradeSchool10",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE10.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool11", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool9", text: "Back" },
+    ],
+  },
+  GradeSchool11: {
+    id: "GradeSchool11",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE11.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool12", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool10", text: "Back" },
+    ],
+  },
+
+  GradeSchool12: {
+    id: "GradeSchool12",
+    label: "GradeSchool",
+    panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE12.jpg",
+    hotSpots: [
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool11", text: "Forward" },
+    ],
+  },
+  SHS1: {
+    id: "SHS1",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE1.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS2", text: "Forward" },
+    ],
+  },
+  SHS2: {
+    id: "SHS2",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE2.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS3", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS1", text: "Back" },
+    ],
+  },
+  SHS3: {
+    id: "SHS3",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE3.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS4", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS2", text: "Back" },
+    ],
+  },
+  SHS4: {
+    id: "SHS4",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE4.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS5", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS3", text: "Back" },
+    ],
+  },
+  SHS5: {
+    id: "SHS5",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE5.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS6", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS4", text: "Back" },
+    ],
+  },
+  SHS6: {
+    id: "SHS6",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE6.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS7", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS5", text: "Back" },
+    ],
+  },
+  SHS7: { id: "SHS7", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE7.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS8", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS6", text: "Back" },
+    ],
+  },
+  SHS8: { id: "SHS8", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE8.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS9", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS7", text: "Back" },
+    ],
+  },
+  SHS9: { id: "SHS9", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE9.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS10", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS8", text: "Back" },
+    ],
+  },
+  SHS10: { id: "SHS10", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE10.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS11", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS9", text: "Back" },
+    ],
+  },
+  SHS11: { id: "SHS11", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE11.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS12", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS10", text: "Back" },
+    ],
+  },
+  SHS12: { id: "SHS12", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE12.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS13", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS11", text: "Back" },
+    ],
+  },
+  SHS13: { id: "SHS13", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE13.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS14", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS12", text: "Back" },
+    ],
+  },
+  SHS14: { id: "SHS14", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE14.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS15", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS13", text: "Back" },
+    ],
+  },
+  SHS15: { id: "SHS15", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE15.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHSBuildingExit", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS14", text: "Back" },
+    ],
+  },
+  SHS16: { id: "SHS16", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE16.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS17", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS15", text: "Back" },
+    ],
+  },
+  SHS17: { id: "SHS17", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE17.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHSBuildingExit", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS16", text: "Back" },
+    ],
+  },
+  SHS18: { id: "SHS18", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE18.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS19", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS17", text: "Back" },
+    ],
+  },
+  SHS19: { id: "SHS19", label: "SHS Building", panorama: "/360_images/SHS BUILDING/SHS_IMAGE19.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHSBuildingExit", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS18", text: "Back" },
+    ],
+  },
+  SHS20: {
+    id: "SHS20",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE20.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS21", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS19", text: "Back" },
+    ],
+  },
+  SHS21: {
+    id: "SHS21",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE21.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS22", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS20", text: "Back" },
+    ],
+  },
+  SHS22: {
+    id: "SHS22",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE22.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS23", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS21", text: "Back" },
+    ],
+  },
+  SHS23: {
+    id: "SHS23",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE23.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS24", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS22", text: "Back" },
+    ],
+  },
+  SHS24: {
+    id: "SHS24",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE24.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS25", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS23", text: "Back" },
+    ],
+  },
+  SHS25: {
+    id: "SHS25",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE25.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS26", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS24", text: "Back" },
+    ],
+  },
+  SHS26: {
+    id: "SHS26",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE26.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS27", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS25", text: "Back" },
+    ],
+  },
+  SHS27: {
+    id: "SHS27",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE27.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS28", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS26", text: "Back" },
+    ],
+  },
+  SHS28: {
+    id: "SHS28",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE28.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS29", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS27", text: "Back" },
+    ],
+  },
+  SHS29: {
+    id: "SHS29",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE29.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS30", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS28", text: "Back" },
+    ],
+  },
+  SHS30: {
+    id: "SHS30",
+    label: "SHS Building",
+    panorama: "/360_images/SHS BUILDING/SHS_IMAGE30.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS31", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS29", text: "Back" },
+    ],
+  },
+}
 
 function buildPannellumConfig(startScene = "Entrance1") {
   const scenes = {};
