@@ -52,7 +52,7 @@ const SCENES = {
     label: "PCC Grounds",
     panorama: "/360_images/grounds/IMG6.jpg",
     hotSpots: [
-      { pitch: -12.244, yaw: -2.075,  type: "scene", sceneId: "Inside3",         text: "To Elevator" },
+      { pitch: -12.244, yaw: -2.075,  type: "scene", sceneId: "SHS1",         text: "To Elevator" },
       { pitch: -14.013, yaw: 178.384, type: "scene", sceneId: "Inside1",          text: "Back" },
       { pitch: -18.849, yaw: 99.564,  type: "scene", sceneId: "MiddleofGrounds",  text: "Middle of Grounds" },
     ],
@@ -91,8 +91,16 @@ MiddleofGrounds3: {
     label: "Middle of Grounds",
     panorama: "/360_images/grounds/IMG10.jpg",
     hotSpots: [
-      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "MiddleofGrounds5", text: "Forward" },
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "CrownJewel", text: "Crown Jewel" },
       { pitch: -6.754, yaw: 179.650, type: "scene", sceneId: "MiddleofGrounds3", text: "Back" },
+    ],
+  },
+  CrownJewel: {
+    id: "CrownJewel",
+    label: "Crown Jewel",
+    panorama: "/360_images/crownjewelpov.jpg",
+    hotSpots: [
+      { pitch: -3.901, yaw: 9.606,   type: "scene", sceneId: "MiddleofGrounds4", text: "Back" },
     ],
   },
   SideofGrounds: {
@@ -288,6 +296,9 @@ MiddleofGrounds3: {
     label: "GradeSchool",
     panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE1.jpg",
     hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS14", text: "Back" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "MiddleofGrounds4", text: "Here" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "CrownJewel", text: "Crown Jewel" },
       { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool2", text: "Forward" },
     ],
   },
@@ -398,6 +409,16 @@ MiddleofGrounds3: {
     panorama: "/360_images/SHS BUILDING/SHS_IMAGE1.jpg",
     hotSpots: [
       { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS2", text: "Forward" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS15", text: "Up" },
+    ],
+  },
+  Elevator: {
+    id: "Elevator",
+    label: "SHS Building",
+    panorama: "/360_images/Elevator.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "SHS1", text: "Back" },
+
     ],
   },
   SHS2: {
