@@ -1,6 +1,6 @@
 import { useState } from "react";
 import PannellumViewer from "./PannellumViewer";
-import { Home, MapPin, MessageSquare, Users, Play, ArrowLeft, ChevronRight } from "lucide-react";
+import { Home, MapPin, Pencil, Users, Play, ArrowLeft, ChevronRight, Menu, X } from "lucide-react";
 
 const SCENES = {
   Entrance1: {
@@ -97,81 +97,162 @@ function buildPannellumConfig(startScene = "Entrance1") {
   };
 }
 
-const NAV_ITEMS = [
-  { label: "HOME",         icon: Home },
-  { label: "VIRTUAL TOUR", icon: MapPin },
-  { label: "FEEDBACK",     icon: MessageSquare },
-  { label: "ABOUT US",     icon: Users },
-];
-
-const Header = ({ activePage = "HOME" }) => (
-  <nav className="relative z-20 flex justify-between items-center px-10 py-5 text-white">
-    <div className="flex items-center gap-4">
-      <img src="/images/pcc-logo.png" alt="PCC Logo" className="w-14 h-14 object-contain drop-shadow-lg" />
-      <div className="border-l border-white/40 pl-4 leading-tight">
-        {["PASIG", "CATHOLIC", "COLLEGE"].map((w) => (
-          <p key={w} className="text-sm font-light tracking-[0.22em]">{w}</p>
-        ))}
-      </div>
-    </div>
-    <div className="flex gap-10 items-center">
-      {NAV_ITEMS.map(({ label, icon: Icon }) => (
-        <button
-          key={label}
-          className={`flex items-center gap-2 text-[11px] tracking-[0.18em] font-semibold transition-colors ${
-            activePage === label ? "text-[#F58220]" : "text-white/70 hover:text-white"
-          }`}
-        >
-          <Icon size={16} strokeWidth={1.8} />
-          {label}
-        </button>
-      ))}
-    </div>
-  </nav>
+const Img = ({ src, alt, className, style }) => (
+  <img
+    src={src} alt={alt} className={className} style={style}
+    onError={e => { e.target.onerror = null; e.target.src = `https://placehold.co/800x600/2a0a0a/ffffff?text=${encodeURIComponent(alt)}`; }}
+  />
 );
 
-const LandingPage = ({ onStart }) => (
-  <div className="min-h-screen flex flex-col relative bg-[#1a0a0a] overflow-hidden font-sans">
-    <div
-      className="absolute inset-0 z-0 bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/pcc-bg-fade.jpg')", filter: "brightness(0.25) saturate(0.8)" }}
-    />
-    <Header activePage="HOME" />
-    <main className="relative z-10 flex flex-1 items-center">
+const Header = ({ setView, currentView }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const items = [
+    { label: "HOME",         Icon: Home,   id: "HOME"     },
+    { label: "VIRTUAL TOUR", Icon: MapPin, id: "TOUR"     },
+    { label: "FEEDBACK",     Icon: Pencil, id: "FEEDBACK" },
+    { label: "ABOUT US",     Icon: Users,  id: "ABOUT"    },
+  ];
+
+  return (
+    <nav className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-10 py-5 text-white">
+      {/* Logo + school name */}
       <div
-        className="w-full py-14 px-20 flex items-center gap-12 shadow-2xl"
-        style={{ background: "linear-gradient(105deg, #7B1113 0%, #a0200e 30%, #F58220 75%, #f9a040 100%)" }}
+        className="flex items-center gap-3 cursor-pointer select-none"
+        onClick={() => setView("HOME")}
       >
-        <div className="flex-1 text-white max-w-xl">
-          <h1 className="text-6xl font-black tracking-tight leading-none mb-5 drop-shadow-xl">
-            PCC'S<br />VIRTUAL TOUR
+        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border border-white/20 shadow-lg flex-shrink-0 bg-white/10">
+          <Img src="/images/pcc-logo.png" alt="PCC Logo" className="w-full h-full object-cover" />
+        </div>
+        <div className="flex flex-col leading-[1.15] font-sans">
+          <span className="text-[13px] md:text-[15px] font-light tracking-widest opacity-95">PASIG</span>
+          <span className="text-[13px] md:text-[15px] font-light tracking-widest opacity-95">CATHOLIC</span>
+          <span className="text-[13px] md:text-[15px] font-light tracking-widest opacity-95">COLLEGE</span>
+        </div>
+      </div>
+
+      <div className="hidden lg:flex items-center gap-8">
+        {items.map(({ label, Icon, id }) => (
+          <button
+            key={id}
+            onClick={() => setView(id)}
+            className={`flex items-center gap-2 transition-opacity ${
+              currentView === id ? "opacity-100" : "opacity-60 hover:opacity-100"
+            }`}
+          >
+            <Icon size={18} strokeWidth={1.5} />
+            <span className="text-[11px] font-semibold tracking-[0.18em]">{label}</span>
+          </button>
+        ))}
+      </div>
+    </nav>
+  );
+};
+
+const EvaluationPage = ({ onStartTour }) => (
+  <div className="min-h-screen flex flex-col relative bg-[#2a0a0a] overflow-hidden font-sans">
+    <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 bg-gradient-to-r from-[#2a0a0a]/90 via-[#2a0a0a]/40 to-[#2a0a0a]/90 z-10" />
+      <Img src="/images/pcc-bg-fade.jpg" className="w-full h-full object-cover opacity-30" alt="Background" />
+    </div>
+
+    <main className="relative z-10 flex flex-1 items-center justify-center px-12 py-20">
+      <div className="w-full max-w-[1400px] flex flex-col lg:flex-row items-center gap-20">
+
+        {/* QR double-frame */}
+        <div className="flex-shrink-0 w-[480px] h-[480px] bg-[#333333] rounded-[60px] p-10 shadow-2xl flex items-center justify-center border border-white/5">
+          <div className="bg-white p-8 rounded-[45px] w-full h-full shadow-inner flex items-center justify-center">
+            <Img src="/images/QR.png" alt="Evaluation QR" className="w-full h-full object-contain" />
+          </div>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 text-white text-center lg:text-left">
+          <h1 className="text-7xl md:text-8xl lg:text-[110px] font-black italic uppercase tracking-tighter leading-[0.85] mb-8 drop-shadow-2xl">
+            EVALUATION <br /> FORM
           </h1>
-          <p className="text-lg font-light leading-relaxed opacity-90">
-            The Virtual Tour of Pasig Catholic College is built for its users who want
+          <p className="text-lg md:text-2xl font-light leading-snug opacity-80 mb-12 max-w-2xl mx-auto lg:mx-0">
+            Your feedback is greatly appreciated, as it will help us improve our website.
+            Your responses will be kept confidential and will be used solely to enhance our final output. Thank you!
+          </p>
+
+          {/* Tour preview card */}
+          <div
+            className="relative w-full max-w-[550px] h-[280px] rounded-[50px] overflow-hidden border border-white/20 shadow-2xl cursor-pointer group"
+            onClick={onStartTour}
+          >
+            <Img src="/images/preview.jpg" alt="Preview" className="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:scale-105 transition-transform duration-700" />
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+            <div className="absolute inset-0 flex flex-col items-center justify-center">
+              <button className="flex items-center gap-4 bg-[#8b1515] hover:bg-[#a31a1a] transition-all text-white px-8 py-2 rounded-[22px] shadow-xl mb-4">
+                <span className="text-2xl font-bold tracking-tight">START</span>
+                <Play size={26} fill="white" stroke="none" />
+              </button>
+              <span className="text-4xl md:text-5xl font-black italic uppercase tracking-widest drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)]">
+                VIRTUAL TOUR
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+);
+
+const LandingPage = ({ onStartTour }) => (
+  <div className="min-h-screen flex flex-col relative bg-[#1c0808] overflow-x-hidden font-sans">
+    <div className="absolute inset-0 z-0 bg-cover bg-center"
+      style={{ backgroundImage: "url('/images/pcc-bg-fade.jpg')", filter: "brightness(0.6)" }} />
+
+    <main className="relative z-10 flex flex-1 items-center">
+      <div className="w-full bg-black/35 backdrop-blur-[2px] border-y border-white/5 py-12 md:py-20 px-6 md:px-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+        <div className="flex-1 text-white text-center lg:text-left">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[85px] font-black tracking-tight leading-none mb-6 md:mb-10 drop-shadow-2xl">
+            PCC'S VIRTUAL TOUR
+          </h1>
+          <p className="text-lg sm:text-2xl md:text-3xl font-light leading-snug opacity-95 max-w-2xl mx-auto lg:mx-0">
+            The Virtual tour of Pasig Catholic College is built for its users who want
             to see the beauty of the campus, and for those who are seeking guidance of
-            what their destined location looks like.
+            what there destined location looks like.
           </p>
         </div>
-        <div className="flex-shrink-0">
-          <div
-            className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white/20"
-            style={{ width: 580, height: 340 }}
-          >
-            <img src="/images/preview.jpg" alt="Campus 360 Preview" className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            <button
-              onClick={onStart}
-              className="absolute bottom-8 left-8 flex items-center gap-3 bg-[#7B1113] hover:bg-[#F58220] transition-all duration-300 text-white px-7 py-3 rounded-full font-black text-lg shadow-xl tracking-wide group"
-            >
-              START
-              <span className="bg-white/20 group-hover:bg-white/30 rounded-full w-9 h-9 flex items-center justify-center transition-colors">
-                <Play size={16} fill="white" className="ml-0.5" />
-              </span>
+        <div className="relative w-full max-w-[660px]">
+          <div className="aspect-video rounded-[30px] md:rounded-[50px] overflow-hidden border border-white/20 shadow-2xl relative">
+            <Img src="/images/preview.jpg" alt="Preview" className="w-full h-full object-cover" />
+            <button onClick={onStartTour}
+              className="absolute bottom-6 left-6 md:bottom-10 md:left-10 flex items-center gap-4 bg-[#8b1515] hover:bg-[#a31a1a] transition-all text-white px-5 py-2 md:pl-8 md:pr-4 md:py-3 rounded-2xl md:rounded-[24px] shadow-2xl group">
+              <span className="text-xl md:text-3xl font-bold tracking-tight">START</span>
+              <div className="border-[1.5px] border-white/50 rounded-lg p-1 group-hover:border-white transition-colors">
+                <Play size={20} className="md:w-7 md:h-7" fill="white" stroke="none" />
+              </div>
             </button>
           </div>
         </div>
       </div>
     </main>
+
+    <div className="relative h-48 md:h-64 z-10 bg-gradient-to-t from-[#8b1515] to-transparent">
+      <div className="absolute inset-0 bg-cover bg-bottom opacity-40 mix-blend-overlay"
+        style={{ backgroundImage: "url('/images/pcc-arches.png')" }} />
+    </div>
+
+    <div className="relative z-10 bg-[#8b1515] py-12 md:py-20 px-6 md:px-12 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+      <Img src="/images/pcc-logo.png" alt="Big Logo" className="w-32 h-32 md:w-48 md:h-48 drop-shadow-xl" />
+      <h2 className="text-white text-5xl sm:text-7xl md:text-[110px] font-bold tracking-tight text-center leading-none">
+        PASIG CATHOLIC COLLEGE
+      </h2>
+    </div>
+
+    <footer className="relative z-10 bg-black/40 py-4 px-6 md:px-12 flex flex-col lg:flex-row justify-between items-center text-[10px] md:text-xs font-light text-white/50 tracking-wider gap-4">
+      <div className="flex gap-4 md:gap-8 flex-wrap justify-center">
+        <span>English (US)</span><span className="opacity-40">/</span>
+        <span>info@pccnet.edu.ph</span><span className="opacity-40">/</span>
+        <span>286427451</span>
+      </div>
+      <div className="flex gap-8 md:gap-12 flex-wrap justify-center">
+        <span>Privacy</span><span>Terms & Conditions</span>
+        <span>Copyright © 2026 All rights reserved.</span>
+      </div>
+    </footer>
   </div>
 );
 
@@ -180,88 +261,53 @@ const TourDashboard = () => {
   const pannellumConfig = buildPannellumConfig("Entrance1");
 
   return (
-    <div className="h-screen w-full bg-[#150a0a] flex flex-col relative overflow-hidden font-sans">
-      <div
-        className="absolute inset-0 z-0 bg-cover bg-center opacity-15"
-        style={{ backgroundImage: "url('/images/pcc-bg-fade.jpg')" }}
-      />
-      <Header activePage="VIRTUAL TOUR" />
-      <div className="relative z-10 flex flex-1 px-10 pb-10 gap-6 overflow-hidden">
-
-        {/* ── Sidebar ── */}
-        <aside
-          className="w-72 rounded-[36px] flex flex-col p-6 text-white shadow-2xl border border-white/10 flex-shrink-0"
-          style={{ background: "linear-gradient(170deg, #F58220 0%, #c03a10 50%, #7B1113 100%)" }}
-        >
-          <p className="text-[10px] tracking-[0.25em] font-bold opacity-60 mb-4 uppercase">
-            Select Location
-          </p>
-          <div className="flex flex-col flex-1 gap-1 overflow-y-auto">
-            {Object.values(SCENES).map((scene) => (
-              <button
-                key={scene.id}
-                onClick={() => setCurrentScene(scene.id)}
-                className={`flex items-center justify-between text-left py-3.5 px-3 rounded-xl transition-all duration-200 ${
-                  currentScene === scene.id
-                    ? "bg-white/20 font-bold translate-x-1"
-                    : "hover:bg-white/10 font-light opacity-80 hover:opacity-100 hover:translate-x-1"
-                }`}
-              >
-                <span className="text-base leading-snug">{scene.label}</span>
-                {currentScene === scene.id && (
-                  <ChevronRight size={16} className="opacity-70 flex-shrink-0" />
-                )}
+    <div className="h-screen w-full bg-[#120505] flex flex-col relative overflow-hidden font-sans">
+      <div className="relative z-10 flex flex-1 flex-col lg:flex-row px-4 pb-4 pt-24 md:px-10 md:pb-10 gap-4">
+        <aside className="w-full lg:w-72 rounded-3xl md:rounded-[40px] flex flex-col p-6 md:p-8 text-white shadow-2xl border border-white/10 bg-gradient-to-b from-[#8b1515] to-[#4b0c0c] flex-shrink-0">
+          <p className="text-[10px] tracking-[0.3em] font-bold opacity-50 mb-4">LOCATIONS</p>
+          <div className="flex flex-col flex-1 gap-1 overflow-y-auto pr-2">
+            {Object.values(SCENES).map((s) => (
+              <button key={s.id} onClick={() => setCurrentScene(s.id)}
+                className={`flex items-center justify-between text-left py-3 px-4 rounded-xl transition-all ${currentScene === s.id ? "bg-white/20 font-bold" : "hover:bg-white/10 opacity-70"}`}>
+                <span className="text-sm">{s.label}</span>
+                {currentScene === s.id && <ChevronRight size={16} />}
               </button>
             ))}
           </div>
-          <button
-            onClick={() => setCurrentScene("Entrance1")}
-            className="mt-4 border-2 border-white/50 hover:border-white hover:bg-white hover:text-[#7B1113] transition-all duration-200 text-white rounded-2xl py-3 px-5 text-xs font-black tracking-widest flex items-center gap-2 justify-center"
-          >
-            <ArrowLeft size={14} />
-            BACK TO ENTRANCE
+          <button onClick={() => window.location.reload()}
+            className="mt-4 border border-white/30 hover:bg-white hover:text-[#8b1515] transition-all rounded-xl py-3 text-xs font-bold flex items-center gap-2 justify-center">
+            <ArrowLeft size={14} /> EXIT TOUR
           </button>
         </aside>
 
-        {/* ── Viewer ── */}
-        <div
-          className="flex-1 rounded-[48px] overflow-hidden shadow-2xl border-4 relative"
-          style={{ borderColor: "rgba(245,130,32,0.6)" }}
-        >
+        <div className="flex-1 rounded-3xl md:rounded-[50px] overflow-hidden border-2 border-white/5 relative bg-black shadow-inner">
           <PannellumViewer
             config={pannellumConfig}
             currentScene={currentScene}
-            onSceneChange={(sceneId) => setCurrentScene(sceneId)}
+            onSceneChange={(id) => setCurrentScene(id)}
           />
-          <div className="absolute top-5 left-5 pointer-events-none">
-            <div className="flex items-center gap-2 bg-black/50 backdrop-blur-md px-5 py-2 rounded-full border border-white/15">
-              <MapPin size={14} className="text-[#F58220]" />
-              <span className="text-white text-xs font-bold tracking-widest uppercase">
-                {SCENES[currentScene]?.label}
-              </span>
-            </div>
-          </div>
-          <div className="absolute bottom-5 right-5 pointer-events-none">
-            <div className="bg-black/40 backdrop-blur-sm px-4 py-2 rounded-xl border border-white/10 text-white/60 text-[11px] tracking-wide">
-              Click & drag to look around · Click arrows to navigate
-            </div>
-          </div>
         </div>
-
       </div>
     </div>
   );
 };
 
 export default function App() {
-  const [started, setStarted] = useState(false);
+  const [view, setView] = useState("HOME");
+
+  const renderView = () => {
+    switch (view) {
+      case "HOME":     return <LandingPage onStartTour={() => setView("TOUR")} />;
+      case "FEEDBACK": return <EvaluationPage onStartTour={() => setView("TOUR")} />;
+      case "TOUR":     return <TourDashboard />;
+      default:         return <LandingPage onStartTour={() => setView("TOUR")} />;
+    }
+  };
+
   return (
-    <div className="App selection:bg-[#F58220] selection:text-white">
-      {started ? (
-        <TourDashboard />
-      ) : (
-        <LandingPage onStart={() => setStarted(true)} />
-      )}
+    <div className="App selection:bg-[#8b1515] selection:text-white relative">
+      <Header setView={setView} currentView={view} />
+      {renderView()}
     </div>
   );
 }
