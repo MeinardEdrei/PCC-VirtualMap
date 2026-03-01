@@ -5,6 +5,36 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>pcc-virtual-map</title>
+    <style>
+      /* Hide Pannellum's loading overlay entirely */
+      .pnlm-load-box,
+      .pnlm-lbar,
+      .pnlm-lbar-fill,
+      .pnlm-load-button,
+      .pnlm-loading {
+        display: none !important;
+      }
+
+      /* Also hide the initial load spinner */
+      .pnlm-ui .pnlm-load-box {
+        display: none !important;
+      }
+
+      /* Hotspot fixes */
+      .pnlm-container {
+        pointer-events: all !important;
+      }
+      .pnlm-hotspot,
+      .pnlm-hotspot-base,
+      .pnlm-scene-hotspot {
+        pointer-events: all !important;
+        cursor: pointer !important;
+        z-index: 9999 !important;
+      }
+      .pnlm-hotspot span {
+        pointer-events: none !important;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
