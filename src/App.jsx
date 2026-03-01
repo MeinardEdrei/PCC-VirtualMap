@@ -292,6 +292,229 @@ const TourDashboard = () => {
   );
 };
 
+const TEAM = [
+  {
+    name: "HEATHER KATE. AMBITO",
+    role: "LEADER",
+    title: "Product Manager",
+    quote: '“You dont need to be a genius to build something great on the web. You just need the patience to fix one broken line of code at a time.”',
+    image: "/images/HEATHER.jpg",
+    imageLabel: "HEATHER'S PICTURE",
+  },
+  {
+    name: "Acer Canlas",
+    role: "DEVELOPER",
+    title: "Assitant Leader",
+    quote: '"The best thing about learning to code in Grade 12? You arent just looking at the future—youre the one typing it into existence."',
+    image: "/images/CANLAS.jpg",
+    imageLabel: "MEMBER'S PICTURE",
+  },
+  {
+    name: "Amielle Huang",
+    role: "DESIGNER",
+    title: "UI/UX Designer",
+    quote: '“I really want to learn more about the UI/UX industry, this is my first time trying to design, and I want to learn more."',
+    image: "/images/HUANG.png",
+    imageLabel: "MEMBER'S PICTURE",
+  },
+  {
+    name: "Carlos Yuan Silva",
+    role: "DEVELOPER",
+    title: "Lead Programmer",
+    quote: '“Dont let a screen full of errors discourage you. Every bug you find is just a free lesson in how to be a better developer tomorrow”',
+    image: "/images/SILVA.jpg",
+    imageLabel: "MEMBER'S PICTURE",
+  },
+  {
+    name: "Lrak Carlos",
+    role: "MEMBER",
+    title: null,
+    quote: null,
+    image: "/images/DEFAULT.jpg",
+    imageLabel: "MEMBER'S PICTURE",
+  },
+  {
+    name: "Kenzo Cruz",
+    role: "MEMBER",
+    title: null,
+    quote: null,
+    image: "/images/DEFAULT.jpg",
+    imageLabel: "MEMBER'S PICTURE",
+  },
+  {
+    name: "Arnold Dampog",
+    role: "MEMBER",
+    title: null,
+    quote: null,
+    image: "/images/DEFAULT.jpg",
+    imageLabel: "MEMBER'S PICTURE",
+  },
+  {
+    name: "Ryu Islo",
+    role: "MEMBER",
+    title: null,
+    quote: null,
+    image: "/images/DEFAULT.jpg",
+    imageLabel: "MEMBER'S PICTURE",
+  }
+];
+
+const AboutPage = () => (
+  <div className="min-h-screen font-sans overflow-x-hidden relative" style={{ backgroundColor: "#7a1010" }}>
+
+    {/* ── HERO ── */}
+    <div className="relative w-full overflow-hidden" style={{ minHeight: "100vh" }}>
+      {/* Background gradient */}
+      <div
+        className="absolute inset-0 z-0"
+        style={{ background: "radial-gradient(ellipse at 60% 0%, #a01818 0%, #5a0a0a 50%, #2a0505 100%)" }}
+      />
+      {/* Watermark */}
+      <div
+        className="absolute right-0 top-0 z-0 select-none pointer-events-none"
+        style={{
+          fontSize: "clamp(200px, 35vw, 500px)",
+          fontWeight: 900,
+          fontStyle: "italic",
+          color: "rgba(255,255,255,0.04)",
+          lineHeight: 1,
+          letterSpacing: "-0.05em",
+        }}
+      >
+        PCC
+      </div>
+
+      <div className="relative z-10 pt-28 pb-0 px-6 md:px-12 lg:px-20">
+        {/* Subtitle */}
+        <p
+          className="text-white text-center mb-1 opacity-85"
+          style={{ fontFamily: "Georgia,'Times New Roman',serif", fontStyle: "italic", fontSize: "clamp(14px,2vw,22px)", letterSpacing: "0.05em" }}
+        >
+          The future is now
+        </p>
+
+        {/* TECHNOLOGY */}
+        <h1
+          className="text-center uppercase italic font-black leading-none mb-0 select-none"
+          style={{ fontSize: "clamp(64px,14vw,180px)", color: "#f5a623", letterSpacing: "-0.02em", textShadow: "0 8px 40px rgba(0,0,0,0.5)", lineHeight: 0.9 }}
+        >
+          TECHNOLOGY
+        </h1>
+
+        {/* Campus image */}
+        <div className="relative mx-auto my-0" style={{ maxWidth: "900px" }}>
+          <div
+            className="w-full overflow-hidden shadow-2xl"
+            style={{ borderRadius: "18px", border: "3px solid rgba(255,255,255,0.12)", aspectRatio: "16/9" }}
+          >
+            <Img src="/images/preview.jpg" alt="PCC Campus" className="w-full h-full object-cover" style={{ filter: "brightness(0.92) saturate(1.1)" }} />
+          </div>
+        </div>
+
+        {/* VIRTUAL CAMPUS */}
+        <div className="relative" style={{ marginTop: "-0.15em" }}>
+          <h2
+            className="uppercase italic font-black leading-none select-none"
+            style={{ fontSize: "clamp(56px,13vw,170px)", color: "#f5a623", letterSpacing: "-0.02em", textShadow: "0 8px 40px rgba(0,0,0,0.5)", lineHeight: 0.88 }}
+          >
+            VIRTUAL
+          </h2>
+          <h2
+            className="uppercase italic font-black leading-none select-none"
+            style={{ fontSize: "clamp(56px,13vw,170px)", color: "#f5a623", letterSpacing: "-0.02em", textShadow: "0 8px 40px rgba(0,0,0,0.5)", lineHeight: 0.88 }}
+          >
+            CAMPUS
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    {/* ── TEAM SECTION ── */}
+    <div
+      className="relative z-10 px-6 md:px-12 lg:px-20 py-16"
+      style={{ background: "linear-gradient(to bottom, #5a0a0a 0%, #3a0606 60%, #2a0404 100%)" }}
+    >
+      <p className="text-white uppercase tracking-[0.4em] text-xs font-bold opacity-40 mb-10">
+        Meet the Team
+      </p>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {TEAM.map((member, i) => (
+          <div
+            key={i}
+            className="relative flex flex-col"
+            style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.1)", borderRadius: "24px", overflow: "hidden" }}
+          >
+            {/* Photo area */}
+            <div
+              className="w-full flex items-center justify-center relative"
+              style={{ aspectRatio: "4/3", background: "#e8e0d8" }}
+            >
+              {member.image ? (
+                <Img src={member.image} alt={member.name} className="w-full h-full object-cover" />
+              ) : (
+                <>
+                  <div className="flex flex-col items-center justify-center w-full h-full">
+                    <div style={{ width: 64, height: 64, borderRadius: "50%", background: "#bbb", marginBottom: 8 }} />
+                    <div style={{ width: 80, height: 40, borderRadius: "40px 40px 0 0", background: "#bbb" }} />
+                  </div>
+                  <p className="absolute bottom-4 text-xs font-bold tracking-widest text-gray-500 uppercase">
+                    {member.imageLabel}
+                  </p>
+                </>
+              )}
+            </div>
+
+            {/* Info */}
+            <div className="p-6 text-white flex-1 flex flex-col">
+              <div className="flex items-baseline gap-3 mb-1 flex-wrap">
+                <span className="font-black text-sm tracking-wider" style={{ color: "#f0f0f0" }}>{member.name}</span>
+                <span className="text-xs font-bold tracking-widest" style={{ color: "#f5a623" }}>— {member.role}</span>
+              </div>
+              <p className="text-sm font-semibold mb-4" style={{ color: "rgba(255,255,255,0.6)" }}>{member.title}</p>
+              <p
+                className="text-xs leading-relaxed mt-auto"
+                style={{ color: "rgba(255,255,255,0.45)", fontFamily: "Georgia,'Times New Roman',serif", fontStyle: "italic" }}
+              >
+                {member.quote}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* About blurb */}
+      <div className="mt-16 max-w-3xl" style={{ borderLeft: "3px solid #f5a623", paddingLeft: "2rem" }}>
+        <h3
+          className="text-white font-black italic uppercase mb-4"
+          style={{ fontSize: "clamp(28px,5vw,56px)", lineHeight: 1 }}
+        >
+          About the Project
+        </h3>
+        <p
+          className="text-white/60 leading-relaxed"
+          style={{ fontFamily: "Georgia,serif", fontStyle: "italic", fontSize: "1rem" }}
+        >
+          The PCC Virtual Campus Tour was created to give prospective students, parents,
+          and visitors an immersive glimpse into Pasig Catholic College's beautiful grounds —
+          from the iconic main gate to the heart of the campus — without leaving their homes.
+          Built with cutting-edge 360° panoramic technology, this experience bridges the gap
+          between physical visits and digital discovery.
+        </p>
+      </div>
+    </div>
+
+    {/* ── FOOTER STRIPE ── */}
+    <div
+      className="relative z-10 py-6 px-6 md:px-20 flex flex-col lg:flex-row justify-between items-center"
+      style={{ background: "#1a0303", borderTop: "1px solid rgba(255,255,255,0.08)" }}
+    >
+      <p className="text-white/30 text-xs tracking-widest">© 2026 Pasig Catholic College. All rights reserved.</p>
+      <p className="text-white/20 text-xs tracking-wider mt-2 lg:mt-0">info@pccnet.edu.ph &nbsp;|&nbsp; 286427451</p>
+    </div>
+  </div>
+);
+
 export default function App() {
   const [view, setView] = useState("HOME");
 
@@ -300,6 +523,7 @@ export default function App() {
       case "HOME":     return <LandingPage onStartTour={() => setView("TOUR")} />;
       case "FEEDBACK": return <EvaluationPage onStartTour={() => setView("TOUR")} />;
       case "TOUR":     return <TourDashboard />;
+      case "ABOUT":    return <AboutPage />;
       default:         return <LandingPage onStartTour={() => setView("TOUR")} />;
     }
   };
