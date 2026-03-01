@@ -929,7 +929,7 @@ const TourDashboard = () => {
   const pannellumConfig = buildPannellumConfig("Entrance1");
 
   return (
-    <div className="w-full bg-[#120505] flex flex-col relative overflow-hidden font-sans" style={{ height: "100vh" }}>
+    <div className="w-full bg-[#120505] flex flex-col relative overflow-hidden font-sans" style={{ height: "100vh", pointerEvents: "all" }}>
       <div className="relative z-10 flex flex-1 flex-col lg:flex-row px-4 pb-4 pt-24 md:px-10 md:pb-10 gap-4" style={{ minHeight: 0 }}>
         <aside className="w-full lg:w-72 rounded-3xl md:rounded-[40px] flex flex-col p-6 md:p-8 text-white shadow-2xl border border-white/10 bg-gradient-to-b from-[#8b1515] to-[#4b0c0c] flex-shrink-0" style={{ minHeight: 0 }}>
           <p className="text-[10px] tracking-[0.3em] font-bold opacity-50 mb-4">LOCATIONS</p>
