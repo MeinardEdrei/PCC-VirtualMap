@@ -190,6 +190,34 @@ MiddleofGrounds3: {
     hotSpots: [
       { pitch: -26.989, yaw: 22.529, type: "scene", sceneId: "JHSHallway6", text: "Back" },
       { pitch: -5.235, yaw: -6.830, type: "scene", sceneId: "JHSUpstairs1", text: "Forward" },
+      { pitch: -5.235, yaw: -6.830, type: "scene", sceneId: "SANPDR1", text: "Forward" },
+    ],
+  },
+  SANPDR1: {
+    id: "SANPDR1",
+    label: "SAN PDR",
+    panorama: "/360_images/SANPDR/SANPDR_IMAGES1.jpg",
+    hotSpots: [
+      { pitch: -19.553, yaw: 122.337, type: "scene", sceneId: "SANPDR2", text: "Forward" },
+      { pitch: -6.625, yaw: 2.182, type: "scene", sceneId: "Upstairs", text: "Back" },
+    ],
+  },
+  SANPDR2: {
+    id: "SANPDR2",
+    label: "SAN PDR",
+    panorama: "/360_images/SANPDR/SANPDR_IMAGES2.jpg",
+    hotSpots: [
+      { pitch: -19.553, yaw: 122.337, type: "scene", sceneId: "SANPDR3", text: "Forward" },
+      { pitch: -6.625, yaw: 2.182, type: "scene", sceneId: "SANPDR1", text: "Back" },
+    ],
+  },
+  SANPDR3: {
+    id: "SANPDR3",
+    label: "SAN PDR",
+    panorama: "/360_images/SANPDR/SANPDR_IMAGES3.jpg",
+    hotSpots: [
+      { pitch: -19.553, yaw: 122.337, type: "scene", sceneId: "GradeSchool12", text: "Forward" },
+      { pitch: -6.625, yaw: 2.182, type: "scene", sceneId: "SANPDR2", text: "Back" },
     ],
   },
   JHSUpstairs1: {
@@ -350,6 +378,7 @@ MiddleofGrounds3: {
     panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE11.jpg",
     hotSpots: [
       { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool12", text: "Forward" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "GradeSchool9", text: "Down" },
       { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool10", text: "Back" },
     ],
   },
@@ -359,7 +388,8 @@ MiddleofGrounds3: {
     label: "GradeSchool",
     panorama: "/360_images/GradeSchoolBuilding/GS_IMAGE12.jpg",
     hotSpots: [
-      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool11", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "GradeSchool11", text: "Back" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SANPDR3", text: "Forward" },
     ],
   },
   SHS1: {
@@ -592,6 +622,126 @@ MiddleofGrounds3: {
       { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS29", text: "Back" },
     ],
   },
+  College1: {
+    id: "College1",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE1.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College2", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS5", text: "Back" },
+    ],
+  },
+  College2: {
+    id: "College2",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE2.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College3", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College1", text: "Back" },
+    ],
+  },
+  College3: {
+    id: "College3",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE3.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College4", text: "Forward" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "CollegeStairs2", text: "Up" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "CollegeStairs1", text: "Down" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College2", text: "Back" },
+    ],
+  },
+  CollegeStairs1: {
+    id: "CollegeStairs1",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_STAIRS1.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College3", text: "Up" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS3", text: "Down" },
+    ],
+  },
+  CollegeStairs2: {
+    id: "CollegeStairs2",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_STAIRS2.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College6", text: "Up" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College3", text: "Down" },
+    ],
+  },
+  CollegeStairs3: {
+    id: "CollegeStairs2",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_STAIRS2.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College9", text: "Up" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College6", text: "Down" },
+    ],
+  },
+  College4: {
+    id: "College4",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE4.jpg",
+    hotSpots: [
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College3", text: "Back" },
+    ],
+  },
+  College5: {
+    id: "College5",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE5.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College6", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS25", text: "Back" },
+    ],
+  },
+  College6: {
+    id: "College6",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE6.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College7", text: "Forward" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "CollegeStairs3", text: "Up" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "CollegeStairs2", text: "Down" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College5", text: "Back" },
+    ],
+  },
+  College7: {
+    id: "College7",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE7.jpg",
+    hotSpots: [
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College6", text: "Back" },
+    ],
+  },
+  College8: {
+    id: "College8",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE8.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College9", text: "Forward" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "SHS37", text: "Back" },
+    ],
+  },
+  College9: {
+    id: "College9",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE9.jpg",
+    hotSpots: [
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "College10", text: "Forward" },
+      { pitch: -3.527527259737495, yaw: 16.691160911568343, type: "scene", sceneId: "CollegeStairs3", text: "Down" },
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College8", text: "Back" },
+    ],
+  },
+  College10: {
+    id: "College10",
+    label: "College Building",
+    panorama: "/360_images/College Building/College_IMAGE10.jpg",
+    hotSpots: [
+      { pitch: -8.542825785295905, yaw: -152.21850287429749, type: "scene", sceneId: "College9", text: "Back" },
+    ],
+  },
+  
 }
 
 function buildPannellumConfig(startScene = "Entrance1") {
