@@ -117,16 +117,16 @@ const Header = ({ setView, currentView }) => {
     <nav className="absolute top-0 left-0 right-0 z-50 flex justify-between items-center px-6 md:px-10 py-5 text-white">
       {/* Logo + school name */}
       <div
-        className="flex items-center gap-3 cursor-pointer select-none"
+        className="flex items-center gap-2 cursor-pointer select-none"
         onClick={() => setView("HOME")}
       >
-        <div className="w-12 h-12 md:w-14 md:h-14 rounded-full overflow-hidden border border-white/20 shadow-lg flex-shrink-0 bg-white/10">
-          <Img src="/images/pcc-logo.png" alt="PCC Logo" className="w-full h-full object-cover" />
+        <div className="relative w-16 h-16 md:w-20 md:h-20 flex-shrink-0 flex items-center justify-center rounded-full overflow-hidden bg-transparent border-none">
+          <Img src="/images/pcc-logo.png" alt="PCC Logo" className="w-full h-full object-contain scale-[1.3] block" />
         </div>
-        <div className="flex flex-col leading-[1.15] font-sans">
-          <span className="text-[13px] md:text-[15px] font-light tracking-widest opacity-95">PASIG</span>
-          <span className="text-[13px] md:text-[15px] font-light tracking-widest opacity-95">CATHOLIC</span>
-          <span className="text-[13px] md:text-[15px] font-light tracking-widest opacity-95">COLLEGE</span>
+        <div className="flex flex-col leading-[1.15] font-sans leading-none">
+          <span className="text-[18px] md:text-[15px] font-thin tracking-widest opacity-95">PASIG</span>
+          <span className="text-[18px] md:text-[15px] font-thin tracking-widest opacity-95">CATHOLIC</span>
+          <span className="text-[18px] md:text-[15px] font-thin tracking-widest opacity-95">COLLEGE</span>
         </div>
       </div>
 
@@ -203,13 +203,13 @@ const LandingPage = ({ onStartTour }) => (
     <div className="absolute inset-0 z-0 bg-cover bg-center"
       style={{ backgroundImage: "url('/images/pcc-bg-fade.jpg')", filter: "brightness(0.6)" }} />
 
-    <main className="relative z-10 flex flex-1 items-center">
-      <div className="w-full bg-black/35 backdrop-blur-[2px] border-y border-white/5 py-12 md:py-20 px-6 md:px-20 flex flex-col lg:flex-row items-center justify-between gap-12">
+    <main className="relative z-10 flex flex-1 items-center mt-30">
+      <div className="w-full bg-white/10 backdrop-blur-xl border-y border-white/20 shadow-[inset_0_1px_1px_0_rgba(255,255,255,0.3)] py-12 md:py-15 px-6 md:px-15 flex flex-col lg:flex-row items-center justify-between gap-12">
         <div className="flex-1 text-white text-center lg:text-left">
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[85px] font-black tracking-tight leading-none mb-6 md:mb-10 drop-shadow-2xl">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-[60px] text-shadow-lg/30 font-black tracking-tight leading-none mb-6 md:mb-10">
             PCC'S VIRTUAL TOUR
           </h1>
-          <p className="text-lg sm:text-2xl md:text-3xl font-light leading-snug opacity-95 max-w-2xl mx-auto lg:mx-0">
+          <p className="text-lg text-shadow-md/20 sm:text-2xl md:text-3xl font-light leading-snug opacity-95 max-w-2xl mx-auto lg:mx-0">
             The Virtual tour of Pasig Catholic College is built for its users who want
             to see the beauty of the campus, and for those who are seeking guidance of
             what there destined location looks like.
@@ -230,14 +230,14 @@ const LandingPage = ({ onStartTour }) => (
       </div>
     </main>
 
-    <div className="relative h-48 md:h-64 z-10 bg-gradient-to-t from-[#8b1515] to-transparent">
+    {/* <div className="relative h-48 md:h-64 z-10 bg-gradient-to-t from-[#8b1515] to-transparent">
       <div className="absolute inset-0 bg-cover bg-bottom opacity-40 mix-blend-overlay"
         style={{ backgroundImage: "url('/images/pcc-arches.png')" }} />
-    </div>
+    </div> */}
 
-    <div className="relative z-10 bg-[#8b1515] py-12 md:py-20 px-6 md:px-12 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-      <Img src="/images/pcc-logo.png" alt="Big Logo" className="w-32 h-32 md:w-48 md:h-48 drop-shadow-xl" />
-      <h2 className="text-white text-5xl sm:text-7xl md:text-[110px] font-bold tracking-tight text-center leading-none">
+    <div className="relative z-10 bg-gradient-to-b from-[#8b1515] via-[#8b1515] to-[#181818] py-10 md:py-20 px-6 md:px-12 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-10">
+      <Img src="/images/pcc-logo.png" alt="Big Logo" className="w-40 h-40 md:w-48 md:h-48 drop-shadow-xl" />
+      <h2 className="text-white text-shadow-lg/30 text-5xl sm:text-7xl md:text-[95px] font-semibold tracking-tight leading-none">
         PASIG CATHOLIC COLLEGE
       </h2>
     </div>
